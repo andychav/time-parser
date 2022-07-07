@@ -12,6 +12,9 @@ I took these rules and wrote them in their PEG forms as .peg file, which the gen
 
 The expected out for a valid time like the above is the number of minutes after midnight. 
 
+` go run . 11:30pm ` <br>
+`11:30pm is 1410 minutes after midnight `
+
 
 This exercise was taken from The Pragmatic Programmer and was my first time working with a generator like this and first time in years looking at BNF.
 It really made me appreciate and consider more thoughtfully the work that goes into writing a programming language and the amount of time that is likely saved by using a PEG
