@@ -1,0 +1,45 @@
+package main
+
+type parser Peg {
+    min int
+    hour int
+    afterMid int  
+}
+
+time <- <(hour meridian / hour":"minute meridian / military)+> END
+{
+    if p.hour != 12 {
+        p.afterMid += p.hour * 60
+    }
+    p.afterMid += p.min
+    fmt.Println(text, "is",p.afterMid, "minutes after midnight")
+}
+
+military <- hour":"minute
+
+hour <- <("2" [0-3] / hTens digit / digit)> 
+{
+    i, _ := strconv.Atoi(text)
+       p.hour = i
+}
+
+minute <- <mTens digit> 
+{
+    i, _ := strconv.Atoi(text)
+       p.min = i
+}
+
+hTens <- [01]
+
+mTens <- [0-5]
+
+digit <- [0-9]
+
+meridian <- <"am" / "pm">
+{
+    if text == "pm" {
+        p.afterMid += 12 * 60
+    } 
+}
+
+END <- !.
