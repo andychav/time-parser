@@ -7,6 +7,7 @@ import (
 )
 
 func getMinAfterMidnight(t string) int {
+	//TODO: Use capturing groups here
 	minAfter := 0
 	hPat := "(2[0-3]|[01]\\d|\\d){1}"
 	mPat := "(:[0-5]\\d)"

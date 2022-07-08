@@ -23,4 +23,4 @@ It really made me appreciate and consider more thoughtfully the work that goes i
 ## Future
 
 Improvement on some of the logic being using the regex and grammar rules, right now it accepts invalid times like 13:00pm. or 12:001am
-This exercise has left me wondering what the real world applications of a PEG are.
+This exercise has left me wondering what the real world applications of a PEG are
